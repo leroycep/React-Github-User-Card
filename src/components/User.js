@@ -36,14 +36,18 @@ class User extends React.Component {
           <div className="content">{this.state.info.bio}</div>
         </div>
 
-        <div className="frame__footer row">
-          {this.state.followers.map(follower => (
-            <Follower
-              className="col-1"
-              key={follower.login}
-              follower={follower}
-            />
-          ))}
+        <div className="frame__footer u-text-center">
+          <div className="frame__subtitle">Followers</div>
+          <div className="row">
+            {this.state.followers.map(follower => (
+              <Follower
+                className="col-1"
+                key={follower.login}
+                follower={follower}
+                addUser={this.props.addUser}
+              />
+            ))}
+          </div>
         </div>
       </div>
     );
