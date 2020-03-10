@@ -1,5 +1,6 @@
 import React from "react";
 import User from "./components/User";
+import "cirrus-ui/dist/cirrus.css";
 
 class App extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="content">
         <User username={this.state.username} />
       </div>
     );

@@ -24,13 +24,25 @@ class User extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={this.state.info.avatar_url} alt={`${this.state.info.name}`} />
-        <h3>{this.state.info.name}</h3>
-        <p>{this.state.info.bio}</p>
-        <div>
+      <div className="frame">
+        <div className="frame__header u-text-center">
+          <figure class="avatar">
+            <img src={this.state.info.avatar_url} alt={this.state.info.name} />
+          </figure>
+          <h3 className="frame__title">{this.state.info.name}</h3>
+        </div>
+
+        <div className="frame__body">
+          <div className="content">{this.state.info.bio}</div>
+        </div>
+
+        <div className="frame__footer row">
           {this.state.followers.map(follower => (
-            <Follower key={follower.login} follower={follower} />
+            <Follower
+              className="col-1"
+              key={follower.login}
+              follower={follower}
+            />
           ))}
         </div>
       </div>
